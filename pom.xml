@@ -7,6 +7,11 @@
   <version>1.0-SNAPSHOT</version>
   <name>Java Server Benchmark Webapp</name>
 
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.7</java.version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>javax.servlet</groupId>
@@ -16,9 +21,18 @@
     </dependency>
   </dependencies>
 
+
   <build>
-    <finalName>java_server_benchmark</finalName>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.2</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
@@ -29,4 +43,5 @@
       </plugin>
     </plugins>
   </build>
+
 </project>
